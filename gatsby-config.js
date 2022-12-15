@@ -8,5 +8,11 @@ module.exports = {
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        url: "http://van-der-zalm-seating.local/graphql",
+      },
+    },
   ],
 };
