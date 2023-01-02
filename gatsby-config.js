@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "van der Zalm Seating",
+    title: "van der Zalm Seating Studio",
     description: "Showroom for iconic design seats",
     author: "@gatsbyjs",
     siteUrl: "https://gatsbystarterdefaultsource.gatsbyjs.io/",

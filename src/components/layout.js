@@ -39,6 +39,10 @@ const Layout = ({ pageTitle, children }) => {
           </li>
         </ul>
       </nav>
+      <main>
+        <h1>{pageTitle}</h1>
+        {children}
+      </main>
     </div>
   )
 }
