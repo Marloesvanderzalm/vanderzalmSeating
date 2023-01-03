@@ -1,14 +1,14 @@
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 import Layout from '../components/layout';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image' 
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'; 
 
 const IndexPage = ({data: {wpPage: { homePageFields }}}) => {
 
   const image = getImage(homePageFields.picture.localFile);
 
   return (
-      <Layout pageTitle="Welcome to the Seating Studio!">
+    <Layout pageTitle="Welcome to the Seating Studio!">
         <section>
           <GatsbyImage image={image} alt={homePageFields.picture.altText} />
           <h1>{homePageFields.title}</h1>
@@ -34,7 +34,7 @@ const IndexPage = ({data: {wpPage: { homePageFields }}}) => {
             })}
           </article>
         </section>
-      </Layout>
+    </Layout>
   )
 }
 
