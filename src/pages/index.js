@@ -3,15 +3,23 @@ import * as React from 'react';
 import Layout from '../components/layout';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image' 
 
-const IndexPage = ({data: {wpPage: {homePageFields}}}) => {
+const IndexPage = ({data: {wpPage: { homePageFields }}}) => {
 
   const image = getImage(homePageFields.picture.localFile);
 
   return (
       <Layout pageTitle="Welcome to the Seating Studio!">
-        <GatsbyImage image={image} alt={homePageFields.picture.altText} />
         <section>
-          <h3>Some of our Seats</h3>
+          <GatsbyImage image={image} alt={homePageFields.picture.altText} />
+          <h1>{homePageFields.title}</h1>
+          <article>
+            <div dangerouslySetInnerHTML={{
+              __html: homePageFields.description
+            }}/>
+          </article>
+        </section>
+        <section>
+          <h1>Some of our Seats</h1>
           <article>
             {homePageFields.featuredProducts.map((item) => {
               const image = getImage(item.seatFields.picture.localFile)
