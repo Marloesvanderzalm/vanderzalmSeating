@@ -1,36 +1,50 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
 import Layout from "../components/layout";
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'; 
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import {
+  contactPageHeader,
+  contactPageText,
+  contactPageFormSection,
+  contactPageForm
+} from '../page.module.css';
 
 const Contact = ({data: {wpPage: {contactPageFields}}}) => {
     const image = getImage(contactPageFields.picture.localFile);
     return(
-        <Layout pageTitle={contactPageFields.title}>
-            <section>
-                <GatsbyImage image={image} alt={contactPageFields.picture.altText} />
-            </section>
-            <article>
-                <div dangerouslySetInnerHTML={{
-                    __html: contactPageFields.description
-                }}/>
-            </article>
-            <section>
-                <h4>Contact Us</h4>
-                <form name="contact" method="POST" data-netlify="true">
-                    <label>Your Fist Name:</label>
-                    <input type="text" name="firstname" required={true} />
-                    <label>Your Last Name</label>
-                    <input type="text" name="lastname" required={true} />
-                    <label>Your Email:</label>
-                    <input type="email" name="email" required={true} />
-                    <label>Subject</label>
-                    <input type="text" name="subject" required={true} />
-                    <label>Message:</label>
-                    <textarea name="message" required={true}></textarea>
-                    <button type="submit">Send</button>
-                </form>
-            </section>
+        <Layout>
+          <section className={contactPageHeader}>
+            <GatsbyImage image={image} alt={contactPageFields.picture.altText} />
+            <div className={contactPageText}>
+              <h1>{contactPageFields.title}</h1>
+              <div dangerouslySetInnerHTML={{
+                __html: contactPageFields.description
+              }}/>
+            </div>
+          </section>
+          <section className={contactPageFormSection}>
+            <h1>Contact Us</h1>
+            <div className={contactPageForm}>
+              <form name="contact" method="POST" data-netlify="true">
+                <label>Your Fist Name
+                  <input type="text" name="firstname" required={true} />
+                </label>
+                <label>Your Last Name
+                  <input type="text" name="lastname" required={true} />
+                </label>
+                <label>Your Email
+                  <input type="email" name="email" required={true} />
+                </label>
+                <label>Subject
+                  <input type="text" name="subject" required={true} />
+                </label>
+                <label>Message
+                  <textarea name="message" required={true}></textarea>
+                </label>
+                <button type="submit">Send</button>
+              </form>
+            </div>
+          </section>
         </Layout>
     )
 }
@@ -45,7 +59,7 @@ query {
           altText  
           localFile {
             childImageSharp {
-              gatsbyImageData(placeholder: BLURRED)
+              gatsbyImageData(placeholder: BLURRED, height: 300, width: 450)
             }
           }
         }

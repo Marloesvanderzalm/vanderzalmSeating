@@ -1,0 +1,118 @@
+.homeHeader {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.homeHeaderText {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-right: 50px;
+}
+
+.featuredSeatsSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 50px;
+    padding-left: 50px;
+}
+
+.featuredSeats {
+    display: flex;
+    flex-direction: row;
+}
+
+.featuredSeat {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    max-width: 200px;
+    text-decoration: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.featuredSeatText {
+    padding-left: 10px;
+    padding-left: 10px;
+    paddingg-bottom: 10px;
+    color: black
+}
+
+.featuredSeatTitle {
+    text-transform: uppercase;
+}
+
+.featuredSeatDesigner {
+    font-size: 10px;
+    font-style: italic;
+    text-transform: uppercase;
+    color: gray
+}
+
+.aboutPage {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.aboutPageText {
+    width: 500px;
+    margin-left: 50px;
+}
+
+.contactPageHeader {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.contactPageText {
+    width: 500px;
+    margin-left: 50px;
+
+}
+
+.contactPageFormSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.contactPageForm {
+    padding-left: 50px;
+    width: 400px;
+}
+
+.contactPageForm label{
+    display: block;
+    margin-top: 15px;
+}
+      
+.contactPageForm input, .contactPageForm textarea {
+    width: 100%;
+    padding: 5px;
+}
+      
+.contactPageForm textarea {
+    min-height: 300px;
+}
+
+.contactPageForm button {
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-right: auto;
+    margin-top: 10px;
+  }
+
+
+
+
+
+

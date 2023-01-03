@@ -1,38 +1,49 @@
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 import Layout from '../components/layout';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'; 
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import {
+  homeHeader,
+  homeHeaderText,
+  featuredSeatsSection,
+  featuredSeats,
+  featuredSeat,
+  featuredSeatText,
+  featuredSeatTitle,
+  featuredSeatDesigner
+} from '../page.module.css'
 
 const IndexPage = ({data: {wpPage: { homePageFields }}}) => {
 
   const image = getImage(homePageFields.picture.localFile);
 
   return (
-    <Layout pageTitle="Welcome to the Seating Studio!">
-        <section>
-          <GatsbyImage image={image} alt={homePageFields.picture.altText} />
-          <h1>{homePageFields.title}</h1>
-          <article>
+    <Layout>
+        <section className={homeHeader}>
+          <div className={homeHeaderText}>
+            <h1>{homePageFields.title}</h1>
             <div dangerouslySetInnerHTML={{
               __html: homePageFields.description
             }}/>
-          </article>
+          </div>
+          <GatsbyImage image={image} alt={homePageFields.picture.altText} />
         </section>
-        <section>
-          <h1>Some of our Seats</h1>
-          <article>
+        <section className={featuredSeatsSection}>
+          <div className={featuredSeats}>
             {homePageFields.featuredProducts.map((item) => {
               const image = getImage(item.seatFields.picture.localFile)
               return (
-                <Link key={item.id} to={`/seats/${item.slug}`}>
+                <Link key={item.id} to={`/seats/${item.slug}`} className={featuredSeat}>
                   <GatsbyImage image={image} alt={item.seatFields.picture.altText} />
-                  <p>{item.seatFields.title}</p>
-                  <p>{item.seatFields.brand} - {item.seatFields.designer}</p>
-                  <p>{item.seatFields.year}</p>
+                  <div className={featuredSeatText}>
+                    <p className={featuredSeatTitle}>{item.seatFields.title}</p>
+                    <p className={featuredSeatDesigner}>{item.seatFields.designer}</p>
+                  </div>
                 </Link>
               )
             })}
-          </article>
+          </div>
+          <h1>Some of our Seats</h1>
         </section>
     </Layout>
   )
@@ -57,7 +68,7 @@ query {
               altText
               localFile {
                 childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED, height: 100, width: 100)
+                  gatsbyImageData(placeholder: BLURRED, height: 200, width: 200)
                 }
               }
             }
@@ -68,7 +79,7 @@ query {
         altText
         localFile {
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED)
+            gatsbyImageData(placeholder: BLURRED, height: 300, width: 600)
           }
         }
       }

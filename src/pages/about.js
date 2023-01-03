@@ -2,19 +2,24 @@ import { graphql } from 'gatsby'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 import Layout from '../components/layout'
+import {
+  aboutPage,
+  aboutPageText
+} from '../page.module.css'
 
 const AboutPage = ({data: {wpPage: { aboutPageFields }}}) => {
   const image = getImage(aboutPageFields.picture.localFile);
   return (
-    <Layout pageTitle={aboutPageFields.title}>
-      <section>
+    <Layout>
+      <section className={aboutPage}>
         <GatsbyImage image={image} alt={aboutPageFields.picture.altText} />
+        <div className={aboutPageText}>
+          <h1>{aboutPageFields.title}</h1>
+          <div dangerouslySetInnerHTML={{
+              __html: aboutPageFields.description
+          }}/>
+        </div>
       </section>
-      <article>
-        <div dangerouslySetInnerHTML={{
-            __html: aboutPageFields.description
-        }}/>
-      </article>
     </Layout>
   )
 }
@@ -29,7 +34,7 @@ query {
         altText
         localFile {
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED)
+            gatsbyImageData(placeholder: BLURRED, height:300, width:450)
           }
         }
       }

@@ -1,12 +1,13 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { 
-  container,
   nav,
-  navLi,
+  navItems,
   navLiItem,
-  navLiText
+  navLiText,
+  main
  } from './layout.module.css'
+import Footer from './footer'
 
 const Layout = ({ pageTitle, children }) => {
   
@@ -21,10 +22,10 @@ const Layout = ({ pageTitle, children }) => {
   `)
 
   return (
-    <div className={container}>
+    <div>
       <title>{data.site.siteMetadata.title}</title>
       <nav className={nav}>
-        <ul className={navLi}>
+        <ul className={navItems}>
           <li className={navLiItem}>
             <Link className={navLiText} to="/">Home</Link>
           </li>
@@ -39,10 +40,11 @@ const Layout = ({ pageTitle, children }) => {
           </li>
         </ul>
       </nav>
-      <main>
+      <main className={main}>
         <h1>{pageTitle}</h1>
         {children}
       </main>
+      <Footer />
     </div>
   )
 }
