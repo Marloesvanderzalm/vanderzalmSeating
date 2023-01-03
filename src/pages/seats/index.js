@@ -4,13 +4,14 @@ import Layout from "../../components/layout";
 
 const SeatsPage = ({data: {allWpSeat: {edges}}}) => {
     return(
-        <Layout pageTitle="Seats - van der Zalm Studio">
+        <Layout pageTitle="Seats at the Seating Studio">
             {edges.map((item) => {
                 const seatInfo = item.node.seatFields;
                 const slug = item.node.slug;
+                
                 return (
-                    <Link to={`/seats/${slug}`}>
-                        <p key={item.node.id}>{seatInfo.title}</p>
+                    <Link to={`/seats/${slug}`} key={item.node.id}>
+                        <p>{seatInfo.title}</p>
                     </Link>
                 )
             })}

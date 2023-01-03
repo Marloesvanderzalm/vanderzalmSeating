@@ -3,7 +3,7 @@ import * as React from 'react'
 import Layout from '../../components/layout'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image' 
 
-const SeatPage = ({data: {wpSeat: {seatFields}}}) => {
+const SeatPage = ({data: {wpSeat: {seatFields, colors: {nodes: colors}}}}) => {
 
     const image = getImage(seatFields.picture.localFile);
 
@@ -19,6 +19,7 @@ const SeatPage = ({data: {wpSeat: {seatFields}}}) => {
                 <p>width: {seatFields.width}</p>
                 <p>depth: {seatFields.depth}</p>
                 <p>Type of seat: {seatFields.typeOfSeat}</p>
+                <p>Colors: {colors.map((item) => item.name)}</p>
             </div>
         </Layout>
     )
