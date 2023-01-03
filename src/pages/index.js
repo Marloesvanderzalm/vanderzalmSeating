@@ -3,17 +3,17 @@ import * as React from 'react';
 import Layout from '../components/layout';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image' 
 
-const IndexPage = ({data: {wpPage: {homepagefields}}}) => {
+const IndexPage = ({data: {wpPage: {homePageFields}}}) => {
 
-  const image = getImage(homepagefields.picture.localFile);
+  const image = getImage(homePageFields.picture.localFile);
 
   return (
       <Layout pageTitle="Welcome to van der Zalm Seating Studio!">
-        <GatsbyImage image={image} alt={homepagefields.picture.altText} />
+        <GatsbyImage image={image} alt={homePageFields.picture.altText} />
         <section>
           <h3>Featured Seats</h3>
           <article>
-            {homepagefields.featuredProducts.map((item) => {
+            {homePageFields.featuredProducts.map((item) => {
               return (
                 <p key={item.id}>{item.seatFields.title}</p>
               )
@@ -27,7 +27,7 @@ const IndexPage = ({data: {wpPage: {homepagefields}}}) => {
 export const query = graphql`
 query {
   wpPage(slug: {eq: "home"}) {
-    homepagefields {
+    homePageFields {
       description
       title
       featuredProducts {

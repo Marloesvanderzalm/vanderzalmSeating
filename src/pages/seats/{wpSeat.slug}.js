@@ -26,28 +26,38 @@ const SeatPage = ({data: {wpSeat: {seatFields}}}) => {
 
 export const query = graphql `
 query ($id: String) {
-    wpSeat(id: {eq: $id}) {
-      seatFields {
-        title
-        brand
-        designer
-        year
-        depth
-        height
-        width
-        typeOfSeat
-        description
-        picture {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED)
-            }
+  wpSeat(id: {eq: $id}) {
+    seatFields {
+      title
+      brand
+      designer
+      year
+      depth
+      height
+      width
+      typeOfSeat
+      description
+      picture {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED)
           }
-          altText
         }
+        altText
+      }
+    }
+    colors {
+      nodes {
+        name
+      }
+    }
+    materials {
+      nodes {
+        name
       }
     }
   }
+}
 `
 
 export default SeatPage;
