@@ -60,6 +60,7 @@ query {
       title
       description
       picture {
+        altText
         localFile {
           childImageSharp {
             gatsbyImageData(placeholder: BLURRED, height: 300, width: 450)

@@ -12,7 +12,6 @@
 
 .featuredSeatsSection {
     display: flex;
-    flex-direction: row;
     justify-content: left;
     margin-top: 50px;
     padding-left: 50px;
@@ -20,7 +19,7 @@
 
 .featuredSeats {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .featuredSeat {
@@ -28,6 +27,7 @@
     flex-direction: column;
     border-radius: 5%;
     margin-right: 50px;
+    margin-bottom: 50px;
     max-width: 200px;
     text-decoration: none;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -65,7 +65,6 @@
 .seatsPageSeats {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: center;
     margin-top: 50px;
     padding-left: 50px;
@@ -77,36 +76,34 @@
     text-transform: uppercase;
 }
 
-.seatPageTaxonomy {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .seatPageTaxonomy p {
     background-color: rgb(255, 196, 0);
     padding: 10px 20px;
     margin-right: 10px;
     width: fit-content;
     border-radius: 5px;
-    text-transform: capitalize;
+    text-transform: lowercase;
 }
 
 .seatPageTaxonomyColor, .seatPageTaxonomyMaterial  {
+    display: flex;
+    flex-direction: column;
+}
+
+.seatPageTaxonomyColors, .seatPageTaxonomyMaterials {
     display: flex;
 }
 
 .contactPageFormSection {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     padding: 30px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    border-radius: 2%;
 }
 
 .contactPageForm {
-    border-left: 1px solid black;
     padding-left: 30px;
     width: 400px;
+    align-items: center;
 }
 
 .contactPageForm label{
@@ -120,7 +117,7 @@
 }
       
 .contactPageForm textarea {
-    min-height: 300px;
+    min-height: 200px;
 }
 
 .contactPageForm button {
