@@ -9,7 +9,7 @@ import {
  } from './layout.module.css'
 import Footer from './footer'
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ children }) => {
   
   const data = useStaticQuery(graphql`
     query {
@@ -41,7 +41,6 @@ const Layout = ({ pageTitle, children }) => {
         </ul>
       </nav>
       <main className={main}>
-        <h1>{pageTitle}</h1>
         {children}
       </main>
       <Footer />

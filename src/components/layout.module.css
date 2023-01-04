@@ -26,14 +26,15 @@
     padding-right: 2rem;
   }
 
-  .nav-li-item:hover {
-    text-decoration: underline;
-  }
-
   .nav-li-text {
     text-decoration: none;
     text-transform: uppercase;
     color: white
+  }
+
+  .nav-li-item .nav-li-text:hover {
+    text-decoration: underline;
+    color: rgb(255, 196, 0);
   }
 
   .main {

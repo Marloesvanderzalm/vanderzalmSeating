@@ -1,0 +1,19 @@
+.footerContainer {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.footerSiteTitle {
+    text-transform: uppercase;
+    padding-right: 10px;
+}
+
+.footerSeparator {
+    color: rgb(255, 196, 0);
+    font-weight: bolder;
+}
+
+.footerSiteDescription {
+    padding-left: 10px;
+}

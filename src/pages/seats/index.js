@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 import {
   seatsPageHeader,
   seatsPageHeaderText,
-  seats
+  seatsPageSeats
 } from '../../page.module.css'
 import Seat from '../../components/seat';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
@@ -22,7 +22,7 @@ const SeatsPage = ({data: {allWpSeat: {edges}, wpPage: {seatsPageFields}}}) => {
           }}/>
         </div>
       </section>
-      <section className={seats}>
+      <section className={seatsPageSeats}>
         {edges.map(({node: seat}) => (
             <Seat key={seat.id} slug={seat.slug} seat={seat} />
         ))}

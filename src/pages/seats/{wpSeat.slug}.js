@@ -1,26 +1,65 @@
 import { graphql } from 'gatsby'
 import * as React from 'react'
 import Layout from '../../components/layout'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image' 
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import {
+  seatPageContainer,
+  seatPageImage,
+  seatPageSeatInfo,
+  seatPageTaxonomy,
+  seatPageTaxonomyColor,
+  seatPageTaxonomyMaterial
+} from '../../page.module.css'
 
-const SeatPage = ({data: {wpSeat: {seatFields, colors: {nodes: colors}}}}) => {
+const SeatPage = ({data: {wpSeat: {seatFields, colors: {nodes: colors}, materials: {nodes: materials}}}}) => {
 
     const image = getImage(seatFields.picture.localFile);
 
     return (
-        <Layout pageTitle={seatFields.title}>
-            <div>
-                <GatsbyImage image={image} alt={seatFields.picture.altText} />
-                <h3>Designer: {seatFields.designer}</h3>
-                <h5>Brand: {seatFields.brand}</h5>
-                <h5>Year: {seatFields.year}</h5>
+        <Layout>
+            <section className={seatPageContainer}>
+              <GatsbyImage className={seatPageImage} image={image} alt={seatFields.picture.altText} />
+              <div className={seatPageSeatInfo}>
+                <h1>{seatFields.title}</h1>
                 <div dangerouslySetInnerHTML={{__html: seatFields.description}} />
-                <p>height: {seatFields.height} cm</p>
-                <p>width: {seatFields.width}</p>
-                <p>depth: {seatFields.depth}</p>
-                <p>Type of seat: {seatFields.typeOfSeat}</p>
-                <p>Colors: {colors.map((item) => item.name)}</p>
-            </div>
+                <p> 
+                  <span>Designer</span> 
+                  {seatFields.designer}
+                </p>
+                <p>
+                  <span>Brand</span> 
+                  {seatFields.brand}
+                </p>
+                <p> 
+                  <span>Year</span> 
+                  {seatFields.year}
+                </p>
+                <p> 
+                  <span>Height</span> 
+                  {seatFields.height}
+                </p>
+                <p> 
+                  <span>Width</span> 
+                  {seatFields.width}
+                </p>
+                <p> 
+                  <span>Dept</span>
+                  {seatFields.depth}
+                </p>
+                <p> 
+                  <span>Type of seat</span>
+                  {seatFields.typeOfSeat}
+                </p>
+                <div className={seatPageTaxonomy}>
+                  <div className={seatPageTaxonomyColor}>
+                    {colors.map((color) => <p>{color.name}</p>)}
+                  </div>
+                  <div className={seatPageTaxonomyMaterial}>
+                    {materials.map((material) => <p>{material.name}</p>)}
+                  </div>
+                </div>
+              </div>
+            </section>
         </Layout>
     )
 }

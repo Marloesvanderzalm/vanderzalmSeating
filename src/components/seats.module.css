@@ -1,6 +1,7 @@
 .seatStyle {
     display: flex;
     flex-direction: column;
+    border-radius: 5%;
     margin-right: 50px;
     margin-bottom: 50px;
     max-width: 200px;

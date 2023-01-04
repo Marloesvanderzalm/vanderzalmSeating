@@ -23,7 +23,7 @@ const Contact = ({data: {wpPage: {contactPageFields}}}) => {
             </div>
           </section>
           <section className={contactPageFormSection}>
-            <h1>Contact Us</h1>
+            <h1>Send Us a message</h1>
             <div className={contactPageForm}>
               <form name="contact" method="POST" data-netlify="true">
                 <label>Your Fist Name
