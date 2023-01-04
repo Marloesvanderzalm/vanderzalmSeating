@@ -41,6 +41,7 @@ const Contact = ({data: {wpPage: {contactPageFields}}}) => {
                 <label>Message
                   <textarea name="message" required={true}></textarea>
                 </label>
+                <input type="hidden" name="form-name" value="contact" />
                 <button type="submit">Send</button>
               </form>
             </div>
