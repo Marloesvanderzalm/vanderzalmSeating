@@ -50,14 +50,14 @@
     color: gray
 }
 
-.seatsPageHeader {
+.seatsPageHeader, .aboutPage, .contactPageHeader, .seatPageContainer {
     display: flex;
     justify-content: space-around;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
-.seatsPageHeaderText {
+.seatsPageHeaderText, .aboutPageText, .contactPageText, .seatPageSeatInfo {
     width: 500px;
     margin-left: 50px;
 }
@@ -69,18 +69,6 @@
     justify-content: center;
     margin-top: 50px;
     padding-left: 50px;
-}
-
-.seatPageContainer {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.seatPageSeatInfo {
-    width: 500px;
-    margin-left: 50px
 }
 
 .seatPageSeatInfo span {
@@ -103,36 +91,8 @@
     text-transform: capitalize;
 }
 
-.seatPageTaxonomyColor {
+.seatPageTaxonomyColor, .seatPageTaxonomyMaterial  {
     display: flex;
-}
-
-.seatPageTaxonomyMaterial {
-    display: flex;
-}
-
-.aboutPage {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.aboutPageText {
-    width: 500px;
-    margin-left: 50px;
-}
-
-.contactPageHeader {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.contactPageText {
-    width: 500px;
-    margin-left: 50px;
 }
 
 .contactPageFormSection {
