@@ -1,29 +1,32 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import * as React from 'react';
 import Layout from "../../components/layout";
-import { GatsbyImage, getImage } from 'gatsby-plugin-image' 
+import {
+  seatsPageHeader,
+  seatsPageHeaderText,
+  seats
+} from '../../page.module.css'
+import Seat from '../../components/seat';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 
-const SeatsPage = ({data: {allWpSeat: {edges}}}) => {
+const SeatsPage = ({data: {allWpSeat: {edges}, wpPage: {seatsPageFields}}}) => {
+  const image = getImage(seatsPageFields.picture.localFile);
   return(
-    <Layout pageTitle="Seats at the Seating Studio">
-        {edges.map((item) => {
-          const seatInfo = item.node.seatFields;
-          const slug = item.node.slug;
-          const image = getImage(seatInfo.picture.localFile)
-          return (
-            <Link to={`/seats/${slug}`} key={item.node.id}>
-              <section>
-                <GatsbyImage image={image} alt={seatInfo.picture.altText} />
-              <article>
-                <h4>{seatInfo.title}</h4>
-                <p>{seatInfo.brand}</p>
-                <p>{seatInfo.designer}</p>
-                <p>{seatInfo.year}</p>
-              </article>
-              </section>
-            </Link>
-          )
-        })}
+    <Layout>
+      <section className={seatsPageHeader}>
+        <GatsbyImage image={image} alt={seatsPageFields.picture.altText} />
+        <div className={seatsPageHeaderText}>
+          <h1>our seats</h1>
+          <div dangerouslySetInnerHTML={{
+            __html: seatsPageFields.description
+          }}/>
+        </div>
+      </section>
+      <section className={seats}>
+        {edges.map(({node: seat}) => (
+            <Seat key={seat.id} slug={seat.slug} seat={seat} />
+        ))}
+      </section>
     </Layout>
   )
 }
@@ -42,13 +45,26 @@ query {
             altText
             localFile {
               childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, height: 100, width: 100)
+                gatsbyImageData(placeholder: BLURRED, height: 300, width: 300)
               }
             }
           }
         }
         slug
         id
+      }
+    }
+  }
+  wpPage(slug: {eq: "seats"}) {
+    seatsPageFields {
+      title
+      description
+      picture {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED, height: 300, width: 450)
+          }
+        }
       }
     }
   }

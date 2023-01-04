@@ -6,8 +6,6 @@
 }
 
 .homeHeaderText {
-    display: flex;
-    flex-direction: column;
     width: 500px;
     margin-right: 50px;
 }
@@ -31,13 +29,13 @@
     margin-right: 50px;
     max-width: 200px;
     text-decoration: none;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .featuredSeatText {
     padding-left: 10px;
-    padding-left: 10px;
-    paddingg-bottom: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
     color: black
 }
 
@@ -48,8 +46,28 @@
 .featuredSeatDesigner {
     font-size: 10px;
     font-style: italic;
-    text-transform: uppercase;
     color: gray
+}
+
+.seatsPageHeader {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.seatsPageHeaderText {
+    width: 500px;
+    margin-left: 50px;
+}
+
+.seats {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 50px;
+    padding-left: 50px;
 }
 
 .aboutPage {
@@ -74,7 +92,6 @@
 .contactPageText {
     width: 500px;
     margin-left: 50px;
-
 }
 
 .contactPageFormSection {
