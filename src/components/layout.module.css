@@ -1,9 +1,14 @@
   html {
-    font-family: "Questrial", Arial, sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
   }
 
   h1 {
     text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-weight: 600;
   }
 
   .nav {

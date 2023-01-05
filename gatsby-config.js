@@ -22,8 +22,8 @@ module.exports = {
         preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
         web: [
           {
-            name: `Questrial`,
-            file: `https://fonts.googleapis.com/css2?family=Questrial&display=swap`,
+            name: `Montserrat`,
+            file: `https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap`,
           },
         ],
       },

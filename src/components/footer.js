@@ -22,7 +22,7 @@ const Footer = () => {
 
     return(
         <section className={footerContainer}>
-            <p className={footerSiteTitle}>{data.site.siteMetadata.title}</p>
+            <h4 className={footerSiteTitle}>{data.site.siteMetadata.title}</h4>
             <p className={footerSeparator}>|</p>
             <p className={footerSiteDescription}>{data.site.siteMetadata.description}</p>
         </section>
