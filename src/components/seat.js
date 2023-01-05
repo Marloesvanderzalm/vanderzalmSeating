@@ -6,7 +6,7 @@ import {
     seatText,
     seatTextTitle,
     seatTextDesigner
-} from './seats.module.css'
+} from './seat.module.css'
 
 const Seat = ({slug, seat}) => {
     const image = getImage(seat.seatFields.picture.localFile)

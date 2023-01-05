@@ -9,7 +9,8 @@ import {
   seatPageTaxonomyColor,
   seatPageTaxonomyColors,
   seatPageTaxonomyMaterial,
-  seatPageTaxonomyMaterials
+  seatPageTaxonomyMaterials,
+  seatPageImage
 } from '../../page.module.css'
 
 const SeatPage = ({data: {wpSeat: {seatFields, colors: {nodes: colors}, materials: {nodes: materials}}}}) => {
@@ -19,7 +20,7 @@ const SeatPage = ({data: {wpSeat: {seatFields, colors: {nodes: colors}, material
     return (
       <Layout>
         <section className={seatPageContainer}>
-          <GatsbyImage image={image} alt={seatFields.picture.altText} />
+          <GatsbyImage className={seatPageImage} image={image} alt={seatFields.picture.altText} />
           <div className={seatPageSeatInfo}>
             <h1>{seatFields.title}</h1>
             <div dangerouslySetInnerHTML={{__html: seatFields.description}} />

@@ -5,6 +5,10 @@
     padding-bottom: 50px;
 }
 
+.homeHeaderImage, .seatsPageImage, .seatPageImage, .contactPageImage, .aboutPageImage {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
 .homeHeaderText {
     width: 500px;
     margin-right: 50px;
@@ -84,12 +88,12 @@
 }
       
 .contactPageForm input, .contactPageForm textarea {
-    width: 100%;
+    width: 90%;
     padding: 5px;
 }
       
 .contactPageForm textarea {
-    min-height: 200px;
+    min-height: 150px;
 }
 
 .contactPageForm button {

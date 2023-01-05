@@ -1,13 +1,14 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import * as React from 'react';
-import Layout from '../components/layout';
 import Seat from '../components/seat';
+import Layout from '../components/layout';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import {
   homeHeader,
   homeHeaderText,
+  homeHeaderImage,
   featuredSeatsSection,
-  featuredSeats
+  featuredSeats,
 } from '../page.module.css'
 
 const IndexPage = ({data: {wpPage: { homePageFields }}}) => {
@@ -23,7 +24,7 @@ const IndexPage = ({data: {wpPage: { homePageFields }}}) => {
               __html: homePageFields.description
             }}/>
           </div>
-          <GatsbyImage image={image} alt={homePageFields.picture.altText} />
+          <GatsbyImage className={homeHeaderImage} image={image} alt={homePageFields.picture.altText} />
         </section>
         <section className={featuredSeatsSection}>
           <div className={featuredSeats}>

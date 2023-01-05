@@ -4,7 +4,8 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import {
   aboutPage,
-  aboutPageText
+  aboutPageText,
+  aboutPageImage
 } from '../page.module.css'
 
 const AboutPage = ({data: {wpPage: { aboutPageFields }}}) => {
@@ -12,7 +13,7 @@ const AboutPage = ({data: {wpPage: { aboutPageFields }}}) => {
   return (
     <Layout>
       <section className={aboutPage}>
-        <GatsbyImage image={image} alt={aboutPageFields.picture.altText} />
+        <GatsbyImage className={aboutPageImage} image={image} alt={aboutPageFields.picture.altText} />
         <div className={aboutPageText}>
           <h1>{aboutPageFields.title}</h1>
           <div dangerouslySetInnerHTML={{

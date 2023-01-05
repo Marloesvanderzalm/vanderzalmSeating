@@ -6,7 +6,8 @@ import {
   contactPageHeader,
   contactPageText,
   contactPageFormSection,
-  contactPageForm
+  contactPageForm,
+  contactPageImage
 } from '../page.module.css';
 
 const Contact = ({data: {wpPage: {contactPageFields}}}) => {
@@ -14,7 +15,7 @@ const Contact = ({data: {wpPage: {contactPageFields}}}) => {
     return(
         <Layout>
           <section className={contactPageHeader}>
-            <GatsbyImage image={image} alt={contactPageFields.picture.altText} />
+            <GatsbyImage className={contactPageImage} image={image} alt={contactPageFields.picture.altText} />
             <div className={contactPageText}>
               <h1>{contactPageFields.title}</h1>
               <div dangerouslySetInnerHTML={{

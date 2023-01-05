@@ -1,12 +1,13 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
+import Seat from '../../components/seat';
 import Layout from "../../components/layout";
 import {
   seatsPageHeader,
+  seatsPageImage,
   seatsPageHeaderText,
-  seatsPageSeats
+  seatsPageSeats,
 } from '../../page.module.css'
-import Seat from '../../components/seat';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 
 const SeatsPage = ({data: {allWpSeat: {edges}, wpPage: {seatsPageFields}}}) => {
@@ -14,7 +15,7 @@ const SeatsPage = ({data: {allWpSeat: {edges}, wpPage: {seatsPageFields}}}) => {
   return(
     <Layout>
       <section className={seatsPageHeader}>
-        <GatsbyImage image={image} alt={seatsPageFields.picture.altText} />
+        <GatsbyImage className={seatsPageImage} image={image} alt={seatsPageFields.picture.altText} />
         <div className={seatsPageHeaderText}>
           <h1>our seats</h1>
           <div dangerouslySetInnerHTML={{
