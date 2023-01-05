@@ -1,16 +1,13 @@
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 import Layout from '../components/layout';
+import Seat from '../components/seat';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import {
   homeHeader,
   homeHeaderText,
   featuredSeatsSection,
-  featuredSeats,
-  featuredSeat,
-  featuredSeatText,
-  featuredSeatTitle,
-  featuredSeatDesigner
+  featuredSeats
 } from '../page.module.css'
 
 const IndexPage = ({data: {wpPage: { homePageFields }}}) => {
@@ -31,15 +28,8 @@ const IndexPage = ({data: {wpPage: { homePageFields }}}) => {
         <section className={featuredSeatsSection}>
           <div className={featuredSeats}>
             {homePageFields.featuredProducts.map((item) => {
-              const image = getImage(item.seatFields.picture.localFile)
-              return (
-                <Link key={item.id} to={`/seats/${item.slug}`} className={featuredSeat}>
-                  <GatsbyImage image={image} alt={item.seatFields.picture.altText} />
-                  <div className={featuredSeatText}>
-                    <p className={featuredSeatTitle}>{item.seatFields.title}</p>
-                    <p className={featuredSeatDesigner}>{item.seatFields.designer}</p>
-                  </div>
-                </Link>
+              return(
+                <Seat key={item.id} slug={item.slug} seat={item} /> 
               )
             })}
           </div>
