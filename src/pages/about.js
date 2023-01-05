@@ -14,6 +14,7 @@ const AboutPage = ({data: {wpPage: { aboutPageFields }}}) => {
     <Layout>
       <section className={aboutPage}>
         <GatsbyImage className={aboutPageImage} image={image} alt={aboutPageFields.picture.altText} />
+        {/* https://www.artek.fi/en/products/stool-60 */}
         <div className={aboutPageText}>
           <h1>{aboutPageFields.title}</h1>
           <div dangerouslySetInnerHTML={{

@@ -16,6 +16,7 @@ const Contact = ({data: {wpPage: {contactPageFields}}}) => {
         <Layout>
           <section className={contactPageHeader}>
             <GatsbyImage className={contactPageImage} image={image} alt={contactPageFields.picture.altText} />
+            {/* https://www.showhome.nl/images/Iconische_stoelen_voor_het_inrichten_van_de_woonkamer_11.jpg */}
             <div className={contactPageText}>
               <h1>{contactPageFields.title}</h1>
               <div dangerouslySetInnerHTML={{

@@ -16,6 +16,13 @@ const SeatsPage = ({data: {allWpSeat: {edges}, wpPage: {seatsPageFields}}}) => {
     <Layout>
       <section className={seatsPageHeader}>
         <GatsbyImage className={seatsPageImage} image={image} alt={seatsPageFields.picture.altText} />
+        {/* https://galeriemagazine.com/eames-lounge-chair-design-icon/ photo by Herman Miller */}
+        {/* https://www.artek.fi/en/products/stool-60 */}
+        {/** https://www.misterdesign.nl/wishbone-stoel-ch24-beuken-chair-carl-hansen.html */}
+        {/** https://www.misterdesign.be/cassina-lc4-chaise-longue.html */}
+        {/** https://www.vitra.com/en-gb/living/product/details/soft-pad-chairs-ea-217-219 */}
+        {/** https://www.hay.nl/en/pyramid-bench-12#visit-store-product-detail */}
+        {/** https://www.gufram.it/en/prodotto-3-bocca */}
         <div className={seatsPageHeaderText}>
           <h1>our seats</h1>
           <div dangerouslySetInnerHTML={{

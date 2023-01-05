@@ -21,6 +21,7 @@ const SeatPage = ({data: {wpSeat: {seatFields, colors: {nodes: colors}, material
       <Layout>
         <section className={seatPageContainer}>
           <GatsbyImage className={seatPageImage} image={image} alt={seatFields.picture.altText} />
+          {/* https://www.koziel.fr/37407-medium_default/papier-peint-panoramique-boiseries-haussmann-bleu-nuit.jpg */}
           <div className={seatPageSeatInfo}>
             <h1>{seatFields.title}</h1>
             <div dangerouslySetInnerHTML={{__html: seatFields.description}} />

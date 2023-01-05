@@ -25,6 +25,7 @@ const IndexPage = ({data: {wpPage: { homePageFields }}}) => {
             }}/>
           </div>
           <GatsbyImage className={homeHeaderImage} image={image} alt={homePageFields.picture.altText} />
+          {/*https://interieurhulp.nl/wp-content/uploads/2019/02/Fritz-hanzen-design-classic.jpg*/}
         </section>
         <section className={featuredSeatsSection}>
           <div className={featuredSeats}>
