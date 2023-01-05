@@ -15,5 +15,18 @@ module.exports = {
         url: "http://van-der-zalm-seating.local/graphql",
       },
     },
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        web: [
+          {
+            name: `Questrial`,
+            file: `https://fonts.googleapis.com/css2?family=Questrial&display=swap`,
+          },
+        ],
+      },
+    },
   ],
 };

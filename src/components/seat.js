@@ -23,6 +23,7 @@ const Seat = ({slug, seat}) => {
             <article className={seatText}>
                 <h4 className={seatTextTitle}>{seat.seatFields.title}</h4>
                 <p className={seatTextDesigner}>{seat.seatFields.designer}</p>
+                <p className={seatTextDesigner}>for {seat.seatFields.brand}</p>
             </article>
         </Link>
     )
